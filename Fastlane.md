@@ -116,7 +116,7 @@ Fastlane 入門
 
 # Fastlane の概念
 
-![center 80%](./img//Untitled(3)%20(4).png)
+![center 80%](./img/lane_discription.png)
 
 ---
 
