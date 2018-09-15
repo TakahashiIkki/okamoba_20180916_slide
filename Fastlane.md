@@ -85,7 +85,7 @@ Fastlane 入門
 ## ビルド設定のベスト・プラクティス
 ##### ※ 紹介Fastfileより引用
 
-![center 55%](./img//スクリーンショット%202018-09-09%2021.49.31.png)
+![center 50%](./img/スクリーンショット%202018-09-09%2021.49.31.png)
 
 
 ---
@@ -276,4 +276,59 @@ $ bundle exec fastlane init
   - アプリの identifier とか設定しておくと、自動で取得してくれる
   - AppStoreへ公開済みのアプリに対してインストールするとScreenshot等も自動ダウンロードしてくれた。
 
+---
 
+
+## Demo
+
+<video controls="controls" width="900" height="500" style="background: #0F0F0F;">
+  <source src="./demo/fastlane_demo_tests.mov">
+</video>
+
+--- 
+
+## ソース解説
+
+- Fastfileにlaneを定義
+
+```ruby
+lane :tests do
+  run_tests(scheme:"QuickQRReaderTests")
+end
+```
+
+- 定義した lane `tests` を指定して fastlane を実行
+
+```
+$ bundle exec fastlane tests
+```
+
+---
+
+## その他
+
+- Slackにテスト結果を通知する事も可能.
+
+```ruby
+lane :tests do
+  run_tests(scheme:"QuickQRReaderTests",
+            slack_url: "https://hooks.slack.com/xx..",
+            slack_channel: "#general")
+end
+```
+
+`bundle exec tests` ↓↓
+
+![70%](./img/スクリーンショット%202018-09-15%2021.28.46.png)
+
+--- 
+
+# 3. まとめ
+
+--- 
+
+# 3. まとめ
+
+- Fastlane を使えば大抵の事は自動化できる。
+- チーム開発に導入してOperationの自動化や簡略化を実現していこう！
+- 今回紹介し切れなかったコマンドはまたデモしたいと思います！
